@@ -8,7 +8,9 @@ var harfler = [
   ["A", "T", "A", "L", "A", "N", "T", "E"],
   ["A", "R", "A", "Ş", "T", "I", "R", "M", "A"]
 ]
+
 var random = Math.floor((Math.random() * (harfler.length - 1)));
+
 var kelime = harfler[random]; // kelime yukarıdan rastgele seçilir
 var kutusayisi = new Array(kelime.length);
 var yanlis = 0;
@@ -52,8 +54,8 @@ var Karakter = function() {
     var karakter = document.createTextNode(" " + harf);
     harftahmin.appendChild(karakter);
     yanlis++;
-    var hangman = document.getElementById("game");
-    hangman.src = "game" + yanlis + ".jpg";
+    var hangman = document.getElementById("hangman");
+    hangman.src = "baslangic" + yanlis + ".jpg";
   }
 
   //hepsi tahmin edilirse
@@ -64,26 +66,17 @@ var Karakter = function() {
     }
   }
   if (bitti) {
-     window.alert("Kazandınız!"); {
-
-}
+    window.alert("Kazandınız!");
   }
 
-    
-      
   //6 hak biterse
   if (yanlis === 6) {
-       window.alert("Üzgünüz..."); {
-
-}
-  
+    window.alert("Üzgünüz...");
   }
+}
 
 function init() {
   printKutusayisi();
 }
 
 window.onload = init;
-    
-    
-    
